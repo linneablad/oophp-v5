@@ -1,3 +1,3 @@
-#### Footer col 2
+#### Om Linnea
 
-Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.
+Jag som har skapat webbsidan heter Linnea Blad och bor i Lidköping. Jag läser kurspaketet *Webbprogrammering och Databaser* på distans via Blekinge Tekniska Högskola.

@@ -1,3 +1,3 @@
-#### Footer col 1
+#### Om webbplatsen
 
-Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.
+Den här webbplatsen har skapats som en del i kursen *Objektorienterade webbteknologier* a.k.a *oophp*.
