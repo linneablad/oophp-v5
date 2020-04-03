@@ -1,0 +1,84 @@
+/**
+ * Base style to affect HTML elements on a general scale.
+*/
+
+/* Variables */
+// Magic number and base fontsize
+@magicNumber:  24px;  // 22px
+@fontSizeBody: 18px; //16px;
+
+// Default font-families
+@fontFamilyLogo: 'Bevan', @fontFamilyGaramond;
+@fontFamilyHeadings: @fontFamilyGaramond;
+@fontFamilyBody: 'Raleway', @fontFamilyHelvetica;
+@fontFamilyCode: @fontFamilyCourier;
+
+// Background colors
+@bgColorHtml: #262626;
+@bgColorBody: #fff;
+@bgColorHeader: #e6e6e6;
+@bgColorBlock: #e6e6e6;
+@bgColorFooter: #262626;
+
+// Text colors
+@tcolorBody: #262626;
+@tColorFooter: #e6e6e6;
+
+
+/* Mixins */
+.border-bottom() {
+    border-bottom: 2px solid @tColorBody;
+}
+
+
+html {
+    overflow-y: scroll;
+    background-color: @bgColorHtml;
+}
+
+body {
+    font-family: @fontFamilyBody;
+    margin: 0;
+    padding: 0;
+    color: @tColorBody;
+    background-color: @bgColorBody;
+    // Activate the grid base font
+    #desinax-hgrid.font(@fontSizeBody);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:visited {
+    color: @tColorBody;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+h1 {
+    margin-top: 0;
+    .border-bottom();
+}
+
+h4 {
+    .border-bottom();
+}
+
+img {
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+figcaption {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+// Activate grid and affect all typographic elements
+#desinax-hgrid.activateDefaultTypography();

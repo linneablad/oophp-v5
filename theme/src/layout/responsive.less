@@ -1,0 +1,40 @@
+/**
+ * Layout for responsive style through media queries.
+ */
+
+
+/**
+* Main
+*/
+@media screen and (max-width: 1100px) {
+    .inner-wrap-main {
+        padding: 10px;
+    }
+}
+
+
+
+@media screen and (max-width: 750px) {
+    /**
+     * Navbar
+     */
+    .rm-desktop {
+        display: none;
+    }
+
+    /**
+     * Sidebars
+     */
+    .has-sidebar,
+    .region-sidebar-right,
+    .region-sidebar-left,
+    .footer-column {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .region-sidebar-left {
+        margin-bottom: 30px;
+    }
+}

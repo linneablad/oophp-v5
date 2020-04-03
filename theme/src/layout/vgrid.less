@@ -1,0 +1,279 @@
+/**
+ * Layout using vgrid
+ */
+
+/**
+ * Variables
+ */
+@tColorFooter: #cde0e4;
+@bgColorBlock: #fff;
+@fontFamilyLogo: 'Parisienne', @fontFamilyGaramond;
+
+
+/* Mixins */
+.box-style() {
+    box-shadow: 1px 2px 5px #888;
+    border-radius: 3px;
+}
+
+
+/**
+ * General layout
+ */
+.wrap-all {
+    overflow-x: hidden;
+}
+
+.inner-wrap {
+    #desinax-vgrid.grid(1100px);
+}
+
+.row {
+    #desinax-vgrid.row();
+}
+
+.vgrid .inner-wrap {
+    @gridImage: "../img/grid_24x30x10-nomargin.png";
+    //@gridImage: "../../img/grid_12x60x20-nomargin.png";
+    #desinax-vgrid.showGrid(@gridImage, 1100px);
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        #desinax-vgrid.showGrid(@gridImage);
+    }
+}
+
+
+
+/* Header */
+.outer-wrap-header,
+.rm-desktop ul li {
+    background-color: #92bcc4;
+}
+
+.outer-wrap-header a {
+    text-decoration: none;
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+.inner-wrap-header {
+    #desinax-vgrid.grid(100%);
+}
+
+.region-header-col-1 {
+    font-size: 3em;
+    padding: 12px 0 12px 12px;
+    font-family: @fontFamilyLogo;
+}
+
+.region-header-col-1,
+.region-header-col-3 {
+    #desinax-vgrid.column(4);
+}
+
+.region-header-col-2 {
+    text-align: center;
+    #desinax-vgrid.column(16);
+    padding-bottom: 12px;
+}
+
+.rm-navbar {
+    padding-top: 24px;
+}
+
+.site-logo,
+.site-logo-text-icon {
+    display: none;
+}
+
+.my-navbar {
+    list-style-type: none;
+
+    &li {
+        display: inline;
+    }
+}
+
+.region-flash {
+    #desinax-vgrid.column(@columns);
+}
+
+
+
+/* Main */
+.inner-wrap-main {
+    min-height: 30em;
+    margin-bottom: 72px;
+}
+
+.region-main {
+    #desinax-vgrid.column(@columns);
+}
+
+.article {
+    clear: both;
+}
+
+.next {
+    text-align: right;
+    float: right;
+}
+
+.next,
+.previous {
+    width: 50%;
+}
+
+.has-sidebar {
+    #desinax-vgrid.column(17);
+}
+
+.has-sidebar-left {
+    #desinax-vgrid.push(1);
+}
+
+.wrap-sidebar .block {
+    background-color: @bgColorBlock;
+    padding: 0 0.5em;
+    padding-bottom: 24px;
+    .box-style();
+}
+
+.region-sidebar-left,
+.region-sidebar-right {
+    #desinax-vgrid.column(6);
+}
+
+.region-sidebar-right {
+    #desinax-vgrid.push(1);
+
+    &.block {
+        margin-bottom: 24px;
+    }
+}
+
+.region-sidebar-left li a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.section-header {
+    font-weight: bold;
+    margin: 36px 0 12px;
+    text-decoration: underline;
+}
+
+.region-sidebar-left ul,
+.breadcrumb-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.region-breadcrumb {
+    #desinax-vgrid.column(@columns);
+}
+
+.breadcrumb-list li {
+    display: inline;
+}
+
+
+
+/* Images */
+.left {
+    float: left;
+    margin-right: 0.5em;
+}
+
+.right {
+    float: right;
+    margin-left: 0.5em;
+}
+
+
+
+/* Byline */
+.author-byline {
+    overflow: auto;
+    clear: both;
+    margin: 0 0 24px;
+    padding: 0.5em;
+    background-color: @bgColorBlock;
+    .box-style();
+    max-width: 75%;
+}
+
+
+
+/* Footer */
+.outer-wrap-footer {
+    background-color: #1b2e32;
+    color: @tColorFooter;
+    padding: 24px 0;
+}
+
+.outer-wrap-footer,
+.site-footer {
+    clear: both;
+}
+
+.footer-column {
+    #desinax-vgrid.column(@columns / 3);
+}
+
+.site-footer {
+    text-align: center;
+}
+
+.outer-wrap-footer a,
+.outer-wrap-footer a:hover,
+.outer-wrap-footer a:visited {
+    color: @tColorFooter;
+}
+
+.footer-column h4 {
+    border-bottom: 1px solid @tColorFooter;
+}
+
+
+
+/* Responsivity */
+@media screen and (max-width: 1100px) {
+    /* Header */
+    .region-header-col-1 {
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /**
+     * Navbar
+     */
+    .rm-desktop {
+        display: none;
+    }
+
+    /**
+     * Sidebars
+     */
+    .has-sidebar,
+    .region-sidebar-right,
+    .region-sidebar-left,
+    .footer-column {
+        #desinax-vgrid.column(@columns);
+    }
+
+    .region-sidebar-left {
+        margin-bottom: 24px;
+    }
+
+    .author-byline {
+        max-width: 100%;
+    }
+}

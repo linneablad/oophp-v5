@@ -1,0 +1,305 @@
+/**
+ * Layout using vgrid
+ */
+
+/**
+ * Variables
+ */
+// Magic number and base fontsize
+@magicNumber:  24px;  // 22px
+@fontSizeBody: 18px; //16px;
+
+// Default font-families
+@fontFamilyLogo: 'Bevan', @fontFamilyGaramond;
+@fontFamilyHeadings: @fontFamilyGaramond;
+@fontFamilyBody: 'Raleway', @fontFamilyHelvetica;
+@fontFamilyCode: @fontFamilyCourier;
+
+// Background colors
+@bgColorHtml: #262626;
+@bgColorBody: #fff;
+@bgColorHeader: #e6e6e6;
+@bgColorBlock: #e6e6e6;
+@bgColorFooter: #262626;
+
+// Text colors
+@tColorBody: #262626;
+@tColorHeader: #94360a;
+@tColorFooter: #e6e6e6;
+
+
+/* Mixins */
+
+
+/**
+ * General layout
+ */
+.wrap-all {
+    overflow-x: hidden;
+}
+
+.inner-wrap {
+    #desinax-vgrid.grid(1100px);
+}
+
+.row {
+    #desinax-vgrid.row();
+}
+
+.vgrid .inner-wrap {
+    @gridImage: "../img/grid_24x30x10-nomargin.png";
+    #desinax-vgrid.showGrid(@gridImage, 1100px);
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        #desinax-vgrid.showGrid(@gridImage);
+    }
+}
+
+
+
+/* Header */
+.outer-wrap-header,
+.rm-desktop ul li {
+    background-color: @bgColorHeader;
+}
+
+.outer-wrap-header a {
+    text-decoration: none;
+
+    &:visited {
+        color: inherit;
+    }
+}
+
+.inner-wrap-header {
+    #desinax-vgrid.grid(100%);
+}
+
+.region-header-col-1 {
+    font-size: 3em;
+    padding: 12px 0 12px 12px;
+    font-family: @fontFamilyLogo;
+}
+
+.region-header-col-1 a {
+    text-decoration: none;
+
+    &:hover {
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.region-header-col-1,
+.region-header-col-3 {
+    #desinax-vgrid.column(4);
+}
+
+.region-header-col-2 {
+    text-align: center;
+    padding-bottom: 12px;
+    #desinax-vgrid.column(16);
+}
+
+.rm-navbar {
+    padding-top: 24px;
+}
+
+.site-logo,
+.site-logo-text-icon {
+    display: none;
+}
+
+.site-logo-text {
+    color: @tColorHeader;
+}
+
+.my-navbar {
+    list-style-type: none;
+
+    &li {
+        display: inline;
+    }
+}
+
+.region-flash {
+    #desinax-vgrid.column(@columns);
+
+    & img {
+        width: 100%;
+        box-shadow: 0 1px 5px #888;
+        border-radius: 0;
+    }
+}
+
+.inner-wrap-flash {
+    max-width: 100%;
+}
+
+
+/* Main */
+.inner-wrap-main {
+    min-height: 30em;
+    margin-bottom: 72px;
+}
+
+.region-main {
+    #desinax-vgrid.column(@columns);
+}
+
+.article {
+    clear: both;
+}
+
+h1,
+h2 {
+    color: @tColorHeader;
+}
+
+.next {
+    text-align: right;
+    float: right;
+}
+
+.next,
+.previous {
+    width: 50%;
+}
+
+.has-sidebar {
+    #desinax-vgrid.column(17);
+}
+
+.has-sidebar-left {
+    #desinax-vgrid.push(1);
+}
+
+.wrap-sidebar .block {
+    background-color: @bgColorBlock;
+    padding: 0 0.5em;
+    padding-bottom: 24px;
+}
+
+.region-sidebar-left,
+.region-sidebar-right {
+    #desinax-vgrid.column(6);
+}
+
+.region-sidebar-right {
+    #desinax-vgrid.push(1);
+
+    &.block {
+        margin-bottom: 24px;
+    }
+}
+
+.region-sidebar-left li a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.section-header {
+    font-weight: bold;
+    margin: 36px 0 12px;
+    text-decoration: underline;
+}
+
+.region-sidebar-left ul,
+.breadcrumb-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.region-breadcrumb {
+    #desinax-vgrid.column(@columns);
+}
+
+.breadcrumb-list li {
+    display: inline;
+}
+
+
+
+/* Images */
+.left {
+    float: left;
+    margin-right: 0.5em;
+}
+
+.right {
+    float: right;
+    margin-left: 0.5em;
+}
+
+.center {
+    text-align: center;
+}
+
+
+
+/* Footer */
+.outer-wrap-footer {
+    background-color: @bgColorFooter;
+    color: @tColorFooter;
+    padding: 24px 0;
+    box-shadow: 0 -2px 5px #888;
+}
+
+.outer-wrap-footer,
+.site-footer {
+    clear: both;
+}
+
+.footer-column {
+    #desinax-vgrid.column(@columns / 3);
+}
+
+.site-footer {
+    text-align: center;
+}
+
+.outer-wrap-footer a,
+.outer-wrap-footer a:hover,
+.outer-wrap-footer a:visited {
+    color: @tColorFooter;
+}
+
+.footer-column h4 {
+    border-bottom: 1px solid @tColorFooter;
+}
+
+
+
+/* Responsivity */
+@media screen and (max-width: 1100px) {
+    /* Header */
+    .region-header-col-1 {
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /**
+     * Navbar
+     */
+    .rm-desktop {
+        display: none;
+    }
+
+    /**
+     * Sidebars
+     */
+    .has-sidebar,
+    .region-sidebar-right,
+    .region-sidebar-left,
+    .footer-column {
+        #desinax-vgrid.column(@columns);
+    }
+
+    .region-sidebar-left {
+        margin-bottom: 24px;
+    }
+}
