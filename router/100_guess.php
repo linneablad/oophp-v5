@@ -83,7 +83,7 @@ $app->router->post("guess/make-guess", function () use ($app) {
 
     if ($res == "CORRECT") {
         return $app->response->redirect("guess/correct-guess");
-    } elseif ($res !== "CORRECT" && $tries === 1) {
+    } elseif ($guessNum && $res !== "CORRECT" && $tries === 1) {
         return $app->response->redirect("guess/failed");
     }
     return $app->response->redirect("guess/play");

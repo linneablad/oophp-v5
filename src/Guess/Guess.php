@@ -80,7 +80,7 @@ class Guess
      * Make a guess, decrease remaining guesses and return a string stating
      * if the guess was correct, too low or to high or if no guesses remains.
      *
-     * @param int $guess The guess from user
+     * @param int $guessNum The guess from user
      * @throws GuessException when guessed number is out of bounds.
      *
      * @return string to show the status of the guess made.
