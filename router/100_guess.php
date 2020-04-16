@@ -15,7 +15,7 @@ $app->router->get("guess/init", function () use ($app) {
     $_SESSION["guessNum"] = null;
 
     // Init the game
-    $game = new Liba19\Guess\Guess();
+    $game = new liba19\Guess\Guess();
     $_SESSION["number"] = $game->number();
     $_SESSION["tries"] = $game->tries();
     return $app->response->redirect("guess/play");
@@ -74,7 +74,7 @@ $app->router->post("guess/make-guess", function () use ($app) {
 
     // Make a guess
     if ($guessNum) {
-        $game = new Liba19\Guess\Guess($number, $tries);
+        $game = new liba19\Guess\Guess($number, $tries);
         $res = $game->makeGuess($guessNum);
         $_SESSION["tries"] = $game->tries();
         $_SESSION["res"] = $res;

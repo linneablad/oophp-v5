@@ -1,5 +1,5 @@
 <?php
-namespace Liba19\Guess;
+namespace liba19\Guess;
 
 /**
  * Exception class for GuessException.
