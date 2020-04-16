@@ -1,7 +1,7 @@
 Tärningsspelet 100
 ====================================
 
-[Starta nytt spel mot datorn](dice100/doInit)
+[Starta nytt spel mot datorn](dice100/do-init)
 
 Generella regler för tärningsspelet 100:
 
