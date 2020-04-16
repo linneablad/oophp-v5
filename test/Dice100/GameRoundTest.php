@@ -45,7 +45,7 @@ class GameRoundTest extends TestCase
         $valuesDiceRolls = $gameRound->getValuesDiceRolls();
         $lastRoll = end($valuesDiceRolls);
 
-        foreach ($lastRoll as $key => $value) {
+        foreach ($lastRoll as $value) {
             $this->assertLessThanOrEqual(6, $value);
             $this->assertGreaterThanOrEqual(1, $value);
         }

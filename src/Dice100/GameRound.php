@@ -135,7 +135,7 @@ class GameRound
         $amountDiceRolls = count($this->valuesDiceRolls);
 
         for ($i=0; $i < $amountDiceRolls; $i++) {
-            foreach ($this->valuesDiceRolls[$i] as $key => $value) {
+            foreach ($this->valuesDiceRolls[$i] as $value) {
                 $sumCurrentGameRound += $value;
             }
         }
