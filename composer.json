@@ -7,7 +7,7 @@
     "autoload": {
         "psr-4": {
             "Anax\\": "src/",
-            "Liba19\\": "src/"
+            "liba19\\": "src/"
         }
     },
     "require": {
