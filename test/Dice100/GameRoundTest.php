@@ -69,7 +69,7 @@ class GameRoundTest extends TestCase
             $exp = false;
             $this->assertEquals($exp, $canContinue);
         } else {
-            $exp = false;
+            $exp = true;
             $this->assertEquals($exp, $canContinue);
         }
     }
