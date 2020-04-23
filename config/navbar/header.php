@@ -93,5 +93,10 @@ return [
             "url" => "dice100",
             "title" => "Spela Tärningsspelet 100",
         ],
+        [
+            "text" => "Tärningsspelet 100 med intelligens och kontroller",
+            "url" => "dice100controller",
+            "title" => "Spela Tärningsspelet 100",
+        ],
     ],
 ];
