@@ -99,5 +99,10 @@ return [
             "url" => "dice100controller",
             "title" => "Spela Tärningsspelet 100",
         ],
+        [
+            "text" => "Filmdatabas",
+            "url" => "movie",
+            "title" => "Filmdatabas",
+        ],
     ],
 ];
