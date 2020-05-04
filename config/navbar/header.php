@@ -103,5 +103,10 @@ return [
             "url" => "movie",
             "title" => "Filmdatabas",
         ],
+        [
+            "text" => "TextFilter",
+            "url" => "textfilter",
+            "title" => "TextFilter",
+        ],
     ],
 ];
